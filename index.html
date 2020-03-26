@@ -90,11 +90,11 @@
               let round = 0;  
             
             for(i = 0; i<5;i++){
-                let playerInput = window.prompt(`Round ${i+1}/5  Score:${points}/5\nPick: Rock, paper or scissors.`)
+                let playerInput = window.prompt(`Round: ${i+1}/5  Score: ${points}/5\nPick: Rock, paper or scissors.`)
                 checkPlayerInput(playerInput);
                 while (!flag){
                     alert("Not an option!");
-                    playerInput = window.prompt(`Round ${i+1}/5  Score:${points}/5\nPick: Rock, paper or scissors.`)
+                    playerInput = window.prompt(`Round: ${i+1}/5  Score:${points}/5\nPick: Rock, paper or scissors.`)
                     checkPlayerInput(playerInput);
                 }
 
