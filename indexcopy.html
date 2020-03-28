@@ -3,39 +3,16 @@
     <head>
         <title>Rock Paper Scissors</title>
         <meta charset="UTF-8"/>
-        <style>
-
-
-
-
-        </style>
 
     </head>
     <body>
-
-        <h1 id="Page Tile">Rock Paper Sissors!</h1>
-        
-        <h2 id="Greeting">Select an option:</h2>
-        <div id="buttons">
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
-        </div>
-
-        <div id="resultBox">
-            <p id="result"></p>
-            <p id="score"></p>
-
-        </div>
-
-
         <script>
             let points = 0;
            
             
             function computerPlay(){
                 let selector = Math.random();
-                //console.log(selector);
+                console.log(selector);
                 if(selector <= .33 ){
                     return "rock";
                 }else if(selector <= .66){
@@ -49,7 +26,7 @@
 
 
             function playRound(playerSelection, computerSelection){
-                round++;
+
                 playerSelection=playerSelection.toLowerCase();
                
                 
@@ -133,37 +110,7 @@
             }else alert(`You lost the game!\nScore: ${points}/5\nReload the page to play again.`);
             
             }
-           // game();
-
-
-           let round = 0; 
-            function buttonEvent(button){
-                
-                
-                button.addEventListener("click",(e) =>{
-                let play = playRound((e.target.id),computerPlay()) ;  
-                console.log(play);
-                let result = document.querySelector("#result");
-                result.textContent = play;
-                let score = document.querySelector("#score");
-                score.textContent = `Round ${round}/5 *** Score ${points}/5`
-                    if(round==5){
-                        if(points>=3){
-                             alert(`You won the game!\nScore: ${points}/5`);
-                        }else alert(`You lost the game!\nScore: ${points}/5`);
-                    result.textContent = "";
-                    points = 0;
-                    round = 0;
-                    score.textContent = `Round ${round}/5 *** Score ${points}/5`;          
-            }
-                
-            })}
-
-
-            const buttons = document.querySelectorAll('button');
-            buttons.forEach(buttonEvent);
-            
-
+            game();
         </script>
 
     </body>
